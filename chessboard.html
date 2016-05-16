@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    //A chess board pattern generator using nested loops and string processing
+    var size = 8;
+    var chessboard = "";
+    square = "#";
+    for (var i = 0; i < size; i++) {
+      if (i % 2 === 0) {
+        square = "#";
+      } else {
+        square = " ";
+      }
+      for (var j = 0; j < size; j++) {
+        if (square === "#") {
+          square = " ";
+        } else
+          square = "#";
+        chessboard += square;
+      }
+      chessboard += "\n";
+    }
+    console.log(chessboard);
+  </script>
+</body>
+
+</html>
