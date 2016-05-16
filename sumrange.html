@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+  /*Find the sum of range of numbers where the user can specify a number range and the number of steps to move through the range. Include the functionality of working with negative ranges*/
+    function range(start, end, step) {
+      var myRange = [];
+      var rangeLen = end - start;
+      var next = start;
+      if (!step === true) {
+        var step = 1;
+      }
+      if (start > end) {
+        for (var i = start; i >= end; i = i + step) {
+          myRange.push(next);
+          next = next + step;
+        }
+      } else
+        for (var i = start; i <= rangeLen + 1; i = i + step) {
+          myRange.push(next);
+          next = next + step;
+        }
+      return myRange;
+    }
+
+    function sum(myArray) {
+      var total = 0;
+      var start = myArray[0];
+      var arrayLength = myArray.length;
+      var end = myArray[arrayLength - 1];
+      for (var i = 0; i < myArray.length; i++) {
+        total += myArray[i]
+      }
+      alert("Sum of the range " + start + " to " + end + " = " + total);
+    }
+    sum(range(5, 2, -1));
+  </script>
+</body>
+
+</html>
